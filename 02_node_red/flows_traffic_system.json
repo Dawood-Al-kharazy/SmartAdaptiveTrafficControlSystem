@@ -1,0 +1,1183 @@
+[
+    {
+        "id": "f2e7a51a6ff84051",
+        "type": "tab",
+        "label": "Traffic System",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "794de1d76dea8a5d",
+        "type": "group",
+        "z": "f2e7a51a6ff84051",
+        "name": "Display number of cars",
+        "style": {
+            "stroke": "#ffff3f",
+            "label": true
+        },
+        "nodes": [
+            "f3a5f2d54d14a05e",
+            "26c3f5ed867304cb",
+            "2485614e5a2545a3",
+            "c570dba8bebd25f6",
+            "24b28a2b20bbdb25",
+            "07844dc605d29eba",
+            "db8ec18a2c37f4c9",
+            "6b2f9d2ed99b6dab",
+            "9ddf42ddb2ee6e56",
+            "17571b916a65d86b",
+            "df0363bcfb3715c0",
+            "2487e64605517998"
+        ],
+        "x": 1214,
+        "y": 1019,
+        "w": 1212,
+        "h": 542
+    },
+    {
+        "id": "7e754d0625aeb30f",
+        "type": "group",
+        "z": "f2e7a51a6ff84051",
+        "name": "Alerts Flow",
+        "style": {
+            "stroke": "#92d04f",
+            "label": true
+        },
+        "nodes": [
+            "b1d91c6b03c3a78c",
+            "1f6c91ae5841b1f8",
+            "3c94081f06a40bbe",
+            "ac081e4d3921fcf2",
+            "81b74e43f466a043",
+            "eb1baeb617b9be3e"
+        ],
+        "x": 1714,
+        "y": 519,
+        "w": 532,
+        "h": 242
+    },
+    {
+        "id": "12a33292a5fa9ec5",
+        "type": "group",
+        "z": "f2e7a51a6ff84051",
+        "name": "RESTful API Flow",
+        "style": {
+            "stroke": "#0070c0",
+            "label": true
+        },
+        "nodes": [
+            "c4c54d16c2cc0270",
+            "456396ac5b5875f7",
+            "c4ffd1b8acd7341a",
+            "8f90f043e705ce19",
+            "d82a8603c683e6fb"
+        ],
+        "x": 54,
+        "y": 1219,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "5b4631edb03dcc5b",
+        "type": "group",
+        "z": "f2e7a51a6ff84051",
+        "name": "Emergency button control panel",
+        "style": {
+            "stroke": "#ff0000",
+            "label": true
+        },
+        "nodes": [
+            "108dc5bb6607bb70",
+            "c506891e3c699ad3",
+            "e611aece57bacc02",
+            "f18820f52841410e",
+            "08d0fd43c2ea4461",
+            "35eddf678798047e",
+            "8a085edc16cc51f2"
+        ],
+        "x": 94,
+        "y": 79,
+        "w": 1232,
+        "h": 322
+    },
+    {
+        "id": "108dc5bb6607bb70",
+        "type": "mqtt out",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "name": "",
+        "topic": "sanad/traffic/command",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8b20fb4a57ca927e",
+        "x": 960,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c506891e3c699ad3",
+        "type": "mqtt in",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "name": "",
+        "topic": "sanad/traffic/command",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8b20fb4a57ca927e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 960,
+        "y": 140,
+        "wires": [
+            [
+                "e611aece57bacc02"
+            ]
+        ]
+    },
+    {
+        "id": "e611aece57bacc02",
+        "type": "debug",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "name": "debug 42",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f3a5f2d54d14a05e",
+        "type": "mqtt in",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "topic": "sanad/traffic/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8b20fb4a57ca927e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1320,
+        "y": 1260,
+        "wires": [
+            [
+                "26c3f5ed867304cb"
+            ]
+        ]
+    },
+    {
+        "id": "26c3f5ed867304cb",
+        "type": "json",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1630,
+        "y": 1260,
+        "wires": [
+            [
+                "2485614e5a2545a3",
+                "c570dba8bebd25f6",
+                "24b28a2b20bbdb25",
+                "07844dc605d29eba",
+                "df0363bcfb3715c0",
+                "2487e64605517998",
+                "func_current_light_status_01"
+            ]
+        ]
+    },
+    {
+        "id": "2485614e5a2545a3",
+        "type": "change",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Sorting the North",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.nCars",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1930,
+        "y": 1140,
+        "wires": [
+            [
+                "db8ec18a2c37f4c9"
+            ]
+        ]
+    },
+    {
+        "id": "c570dba8bebd25f6",
+        "type": "change",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Sorting the East",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.eCars",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 1220,
+        "wires": [
+            [
+                "6b2f9d2ed99b6dab"
+            ]
+        ]
+    },
+    {
+        "id": "24b28a2b20bbdb25",
+        "type": "change",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Sorting the South",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sCars",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1930,
+        "y": 1280,
+        "wires": [
+            [
+                "9ddf42ddb2ee6e56"
+            ]
+        ]
+    },
+    {
+        "id": "07844dc605d29eba",
+        "type": "change",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Sorting the West",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wCars",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 1340,
+        "wires": [
+            [
+                "17571b916a65d86b"
+            ]
+        ]
+    },
+    {
+        "id": "db8ec18a2c37f4c9",
+        "type": "ui-gauge",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "group": "8517c852a1e481a2",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Number of cars in the North",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Cars",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "25",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2280,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b2f9d2ed99b6dab",
+        "type": "ui-gauge",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "group": "8517c852a1e481a2",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Number of cars in the East",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Cars",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "25",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2280,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ddf42ddb2ee6e56",
+        "type": "ui-gauge",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "group": "8517c852a1e481a2",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Number of cars in the South",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Cars",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "25",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2280,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17571b916a65d86b",
+        "type": "ui-gauge",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "",
+        "group": "8517c852a1e481a2",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Number of cars in the West",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Cars",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "25",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2280,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df0363bcfb3715c0",
+        "type": "debug",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "debug 43",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1920,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "c4c54d16c2cc0270",
+        "type": "http in",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "",
+        "url": "/emergency",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1260,
+        "wires": [
+            [
+                "norm_emergency_cmd_01"
+            ]
+        ]
+    },
+    {
+        "id": "456396ac5b5875f7",
+        "type": "http response",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 510,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "2487e64605517998",
+        "type": "change",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Save in the memory",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trafficData",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1920,
+        "y": 1520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4ffd1b8acd7341a",
+        "type": "http in",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "",
+        "url": "/status",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 1360,
+        "wires": [
+            [
+                "8f90f043e705ce19"
+            ]
+        ]
+    },
+    {
+        "id": "8f90f043e705ce19",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "Get from memory (with fallback)",
+        "x": 410,
+        "y": 1360,
+        "wires": [
+            [
+                "d82a8603c683e6fb"
+            ]
+        ],
+        "func": "var data = flow.get(\"trafficData\");\nif (!data || typeof data !== \"object\") {\n    data = {\n        \"nCars\": 0,\n        \"eCars\": 0,\n        \"sCars\": 0,\n        \"wCars\": 0,\n        \"state\": 0\n    };\n}\nmsg.payload = data;\nmsg.statusCode = 200;\nmsg.headers = { \"Content-Type\": \"application/json\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": []
+    },
+    {
+        "id": "d82a8603c683e6fb",
+        "type": "http response",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "b1d91c6b03c3a78c",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "name": "Telegram Alert",
+        "func": "// ضع بياناتك هنا بين علامتي التنصيص\nvar token = \"8888903999:AAHAy7hvfw0t1jDCgUdo_dN0qZxomcIV4Ek\";\nvar chatId = \"5075413044\";\nvar direction = \"\";\n\n// استخراج رقم المسار سواء كان رقماً أو كائناً\nvar lane = (typeof msg.payload === 'object' && msg.payload !== null) ? (msg.payload.lane || msg.payload.emergencyLane || 1) : parseInt(msg.payload) || 1;\n\n// تحويل الرقم إلى مسار\nif (lane == 1) direction = \"الشمال\";\nelse if (lane == 2) direction = \"الشرق\";\nelse if (lane == 3) direction = \"الجنوب\";\nelse if (lane == 4) direction = \"الغرب\";\n\n// تجهيز نص الرسالة\nvar text = \"🚨 تنبيه نظام سند: تم تفعيل وضع الطوارئ في مسار \" + direction;\n\n// دمج الرابط مع البيانات\nmsg.url = \"https://api.telegram.org/bot\" + token + \"/sendMessage?chat_id=\" + chatId + \"&text=\" + encodeURIComponent(text);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1820,
+        "y": 560,
+        "wires": [
+            [
+                "1f6c91ae5841b1f8"
+            ]
+        ]
+    },
+    {
+        "id": "1f6c91ae5841b1f8",
+        "type": "http request",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2070,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c94081f06a40bbe",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "name": "Email Alert",
+        "func": "var direction = \"\";\n\nvar lane = (typeof msg.payload === 'object' && msg.payload !== null) ? (msg.payload.lane || msg.payload.emergencyLane || 1) : parseInt(msg.payload) || 1;\n\nif (lane == 1) direction = \"الشمال\";\nelse if (lane == 2) direction = \"الشرق\";\nelse if (lane == 3) direction = \"الجنوب\";\nelse if (lane == 4) direction = \"الغرب\";\n\nmsg.topic = \"🚨 إنذار طوارئ: تقاطع المرور\";\nmsg.payload = \"مرحباً،\\n\\nيرجى العلم بأنه تم تفعيل وضع الطوارئ، وتم فتح الإشارة الخضراء لمرور حالة إسعاف في مسار: \" + direction + \".\\n\\n-- نظام الإدارة المرورية --\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1810,
+        "y": 640,
+        "wires": [
+            [
+                "ac081e4d3921fcf2"
+            ]
+        ]
+    },
+    {
+        "id": "ac081e4d3921fcf2",
+        "type": "e-mail",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "studyru23@gmail.com",
+        "dname": "",
+        "x": 2120,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f18820f52841410e",
+        "type": "ui-button",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "group": "dd0cabd689fe5e31",
+        "name": "North Emergency Services",
+        "label": "North Emergency Services",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "108dc5bb6607bb70",
+                "b1d91c6b03c3a78c",
+                "3c94081f06a40bbe"
+            ]
+        ]
+    },
+    {
+        "id": "08d0fd43c2ea4461",
+        "type": "ui-button",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "group": "dd0cabd689fe5e31",
+        "name": "East Emergency Services",
+        "label": "East Emergency Services",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "108dc5bb6607bb70",
+                "b1d91c6b03c3a78c",
+                "3c94081f06a40bbe"
+            ]
+        ]
+    },
+    {
+        "id": "35eddf678798047e",
+        "type": "ui-button",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "group": "dd0cabd689fe5e31",
+        "name": "South Emergency Services",
+        "label": "South Emergency Services",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 280,
+        "wires": [
+            [
+                "108dc5bb6607bb70",
+                "b1d91c6b03c3a78c",
+                "3c94081f06a40bbe"
+            ]
+        ]
+    },
+    {
+        "id": "8a085edc16cc51f2",
+        "type": "ui-button",
+        "z": "f2e7a51a6ff84051",
+        "g": "5b4631edb03dcc5b",
+        "group": "dd0cabd689fe5e31",
+        "name": "West Emergency Services",
+        "label": "West Emergency Services",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "4",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 360,
+        "wires": [
+            [
+                "108dc5bb6607bb70",
+                "b1d91c6b03c3a78c",
+                "3c94081f06a40bbe"
+            ]
+        ]
+    },
+    {
+        "id": "81b74e43f466a043",
+        "type": "catch",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "name": "",
+        "scope": [
+            "3c94081f06a40bbe",
+            "b1d91c6b03c3a78c"
+        ],
+        "uncaught": false,
+        "x": 1810,
+        "y": 720,
+        "wires": [
+            [
+                "eb1baeb617b9be3e"
+            ]
+        ]
+    },
+    {
+        "id": "eb1baeb617b9be3e",
+        "type": "debug",
+        "z": "f2e7a51a6ff84051",
+        "g": "7e754d0625aeb30f",
+        "name": "debug 44",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2140,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "8b20fb4a57ca927e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8517c852a1e481a2",
+        "type": "ui-group",
+        "name": "Traffic density",
+        "page": "85cec26db858af65",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "dd0cabd689fe5e31",
+        "type": "ui-group",
+        "name": "Emergency orders",
+        "page": "85cec26db858af65",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "85cec26db858af65",
+        "type": "ui-page",
+        "name": "Traffic Orders",
+        "ui": "a855fd3877702cd4",
+        "path": "/traffic",
+        "icon": "home",
+        "layout": "notebook",
+        "theme": "1731dd655d3e92de",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "a855fd3877702cd4",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "1731dd655d3e92de",
+        "type": "ui-theme",
+        "name": "Theme 1",
+        "colors": {
+            "surface": "#0f172a",
+            "primary": "#0ea5e9",
+            "bgPage": "#1e293b",
+            "groupBg": "#334155",
+            "groupOutline": "#475569"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "16px",
+            "groupGap": "16px",
+            "groupBorderRadius": "16px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "0ddd89e7b09492eb",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-node-email": "5.2.5"
+        }
+    },
+    {
+        "id": "emer_resp_format_01",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "Format Emergency Response",
+        "func": "var lane = 1;\nif (typeof msg.payload === \"object\" && msg.payload !== null) {\n    lane = msg.payload.lane || msg.payload.emergencyLane || 1;\n} else if (typeof msg.payload === \"number\" || typeof msg.payload === \"string\") {\n    lane = parseInt(msg.payload) || 1;\n}\nmsg.payload = {\n    \"status\": \"success\",\n    \"message\": \"Emergency mode activated for lane \" + lane,\n    \"lane\": lane\n};\nmsg.statusCode = 200;\nmsg.headers = { \"Content-Type\": \"application/json\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1260,
+        "wires": [
+            [
+                "456396ac5b5875f7"
+            ]
+        ]
+    },
+    {
+        "id": "func_current_light_status_01",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "name": "Format Current Light State",
+        "func": "var s = msg.payload.state;\nvar text = \"\";\n\nif (s === 0) text = \"🟢 الشمال (North) : أخضر (GREEN)\";\nelse if (s === 1) text = \"🟡 الشمال (North) : أصفر (YELLOW)\";\nelse if (s === 2) text = \"🟢 الشرق (East) : أخضر (GREEN)\";\nelse if (s === 3) text = \"🟡 الشرق (East) : أصفر (YELLOW)\";\nelse if (s === 4) text = \"🟢 الجنوب (South) : أخضر (GREEN)\";\nelse if (s === 5) text = \"🟡 الجنوب (South) : أصفر (YELLOW)\";\nelse if (s === 6) text = \"🟢 الغرب (West) : أخضر (GREEN)\";\nelse if (s === 7) text = \"🟡 الغرب (West) : أصفر (YELLOW)\";\nelse text = \"⚪ غير معروف (\" + s + \")\";\n\nmsg.payload = text;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1940,
+        "y": 1460,
+        "wires": [
+            [
+                "ui_text_current_light_01"
+            ]
+        ]
+    },
+    {
+        "id": "ui_text_current_light_01",
+        "type": "ui-text",
+        "z": "f2e7a51a6ff84051",
+        "g": "794de1d76dea8a5d",
+        "group": "8517c852a1e481a2",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "Current Active Light",
+        "label": "🚦 حالة الإشارة المفتوحة الآن:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 18,
+        "color": "#000000",
+        "className": "",
+        "x": 2260,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "norm_emergency_cmd_01",
+        "type": "function",
+        "z": "f2e7a51a6ff84051",
+        "g": "12a33292a5fa9ec5",
+        "name": "Normalize Emergency Command",
+        "func": "var lane = 1;\nif (typeof msg.payload === \"object\" && msg.payload !== null) {\n    lane = msg.payload.lane || msg.payload.emergencyLane || 1;\n} else if (typeof msg.payload === \"number\" || typeof msg.payload === \"string\") {\n    lane = parseInt(msg.payload) || 1;\n}\n\n// Update emergencyLane in flow memory so Flutter sees it immediately!\nvar traffic = flow.get(\"trafficData\") || {};\ntraffic.emergencyLane = lane;\nflow.set(\"trafficData\", traffic);\n\n// Pass normalized number to MQTT and downstream nodes\nmsg.payload = lane;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 1260,
+        "wires": [
+            [
+                "emer_resp_format_01",
+                "108dc5bb6607bb70",
+                "b1d91c6b03c3a78c",
+                "3c94081f06a40bbe"
+            ]
+        ]
+    }
+]
