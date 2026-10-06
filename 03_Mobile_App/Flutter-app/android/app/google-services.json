@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "263265424226",
+    "firebase_url": "https://adaptive-trafic-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "adaptive-trafic",
+    "storage_bucket": "adaptive-trafic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263265424226:android:ea7a79f2f65c88e23cd23b",
+        "android_client_info": {
+          "package_name": "com.traffic.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGkmyAbJE8tlkzou7oPcpK4Am1smIvXGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

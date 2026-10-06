@@ -1,0 +1,55 @@
+name: untitled1
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # أيقونات iOS
+  cupertino_icons: ^1.0.8
+
+  # 🔥 مكتبات Firebase الأساسية
+  firebase_core: ^3.0.0
+  firebase_database: ^11.0.0
+  # firebase_auth: ^5.0.0
+  # يمكنك إضافة مكتبات أخرى مثل:
+  # firebase_messaging: ^15.0.0   # للإشعارات
+  # firebase_storage: ^12.0.0     # لتخزين الملفات
+  google_fonts: ^6.2.1
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+
+  # يمكنك إضافة الصور أو الخطوط هنا لاحقاً
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
