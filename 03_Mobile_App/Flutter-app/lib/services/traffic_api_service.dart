@@ -7,7 +7,7 @@ class TrafficApiService {
   // للتشغيل على محاكي الأندرويد (Android Emulator):
   // 10.0.2.2 يشير تلقائياً إلى localhost في جهاز اللابتوب
   // إذا كنت تشغل التطبيق على هاتف حقيقي، غير الـ IP إلى عنوان لابتوبك مثل: http://192.168.1.100:1880
-  static String baseUrl = 'http://10.0.2.2:1880';
+  static String baseUrl = 'http://192.168.43.100:1880';
 
   /// دفق بيانات دوري يطلب حالة المرور عبر RESTful API كل 800 مللي ثانية
   Stream<TrafficState> get trafficStream async* {

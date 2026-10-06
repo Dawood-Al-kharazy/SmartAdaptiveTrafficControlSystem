@@ -5,10 +5,10 @@
 // ====================================================================
 // 1. إعدادات الشبكة و MQTT (Mosquitto Local Broker)
 // ====================================================================
-#define WIFI_SSID "*****"
-#define WIFI_PASSWORD "12121212"
+#define WIFI_SSID "majed"
+#define WIFI_PASSWORD "12345678"
 
-const char* mqtt_server = "192.168.43.99"; 
+const char* mqtt_server = "192.168.43.100"; 
 const int   mqtt_port   = 1883;
 
 const char* TOPIC_DATA    = "sanad/traffic/data";     // لنشر حالة الكثافة والإشارات
